@@ -6,7 +6,7 @@ export function QuickActionCard() {
   const actions = [
     {
       title: "Upload Data",
-      description: "Trigger Member 1 cleaning & scoring",
+      description: "Trigger data cleaning & scoring",
       href: "/upload",
       icon: UploadCloud,
       color: "bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-200",

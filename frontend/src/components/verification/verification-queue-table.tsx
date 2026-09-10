@@ -25,7 +25,7 @@ export function VerificationQueueTable({
             <div>
               <h3 className="text-sm font-bold text-slate-900">Pending Verification Queue</h3>
               <p className="text-[11px] text-slate-500">
-                Insights requiring Member 3 review before publishing to decision dashboard
+                Insights requiring review before publishing to decision dashboard
               </p>
             </div>
           </div>

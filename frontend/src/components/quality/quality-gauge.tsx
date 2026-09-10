@@ -84,7 +84,7 @@ export function QualityGauge() {
       </div>
 
       <p className="mt-4 text-[10px] text-slate-400 text-center border-t border-slate-100 pt-3">
-        Evaluated automatically during Member 1 staging pipeline execution
+        Evaluated automatically during staging pipeline execution
       </p>
     </div>
   );

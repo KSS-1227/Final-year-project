@@ -64,7 +64,7 @@ export function FileDropzone({
       <div className="border-b border-slate-100 pb-3">
         <h3 className="text-sm font-bold text-slate-900">Upload Business Data</h3>
         <p className="text-[11px] text-slate-500">
-          Upload an Excel or CSV file to trigger Member 1 ingestion, validation & quality scoring.
+          Upload an Excel or CSV file to trigger ingestion, validation & quality scoring.
         </p>
       </div>
 
@@ -165,7 +165,7 @@ export function FileDropzone({
             className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-5 py-2 text-xs font-bold text-white hover:bg-blue-700 transition-colors shadow-2xs focus:ring-1 focus:ring-blue-600"
           >
             <UploadCloud className="h-4 w-4" />
-            Upload & Trigger Member 1 Pipeline
+            Upload & Trigger Pipeline
           </button>
         </div>
       )}

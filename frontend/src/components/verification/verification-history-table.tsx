@@ -68,7 +68,7 @@ export function VerificationHistoryTable({
                   <td className="p-3 font-semibold text-slate-900 truncate max-w-[240px]">
                     {item.title}
                   </td>
-                  <td className="p-3 text-slate-700 font-medium">{item.verifiedBy || "Member 3"}</td>
+                  <td className="p-3 text-slate-700 font-medium">{item.verifiedBy || "System"}</td>
                   <td className="p-3 text-slate-500 text-[11px] font-mono">{item.verifiedAt}</td>
                   <td className="p-3 text-right">
                     <button

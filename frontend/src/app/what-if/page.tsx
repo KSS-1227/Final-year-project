@@ -26,7 +26,7 @@ export default function WhatIfPage() {
         <div>
           <div className="flex items-center space-x-2">
             <span className="rounded bg-indigo-100 px-2 py-0.5 text-[10px] font-bold text-indigo-800 uppercase">
-              Member 3 Stage 13 Simulation Engine
+              Scenario Simulation Engine
             </span>
             <span className="text-xs text-slate-400">• Consumes `POST /api/scenarios/simulate`</span>
           </div>

@@ -44,7 +44,7 @@ export function RecommendationCard({ simulation, onSaveScenario }: Recommendatio
             </div>
             <div>
               <h3 className="text-sm font-bold text-slate-900">Decision Engine Recommendation</h3>
-              <p className="text-[11px] text-slate-500">Automated Member 3 Stage 13 scenario insight</p>
+              <p className="text-[11px] text-slate-500">Automated scenario insight</p>
             </div>
           </div>
           <span

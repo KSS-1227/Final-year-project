@@ -12,7 +12,7 @@ import {
 } from "@/types/data-contracts";
 
 // ==========================================
-// MEMBER 1 MOCK DATA
+// INGESTION AND QUALITY MOCK DATA
 // ==========================================
 
 export const MOCK_BATCHES: Batch[] = [
@@ -147,7 +147,7 @@ export const MOCK_PIPELINE_LOGS: PipelineLog[] = [
 ];
 
 // ==========================================
-// MEMBER 2 MOCK DATA
+// ANALYTICS, FORECAST, AND DETECTION MOCK DATA
 // ==========================================
 
 export const MOCK_METRICS: MetricItem[] = [
@@ -257,7 +257,7 @@ export const MOCK_ANOMALIES: AnomalyItem[] = [
 ];
 
 // ==========================================
-// MEMBER 3 MOCK DATA
+// VERIFICATION AND SCENARIO MOCK DATA
 // ==========================================
 
 export const MOCK_VERIFIED_INSIGHTS: VerifiedInsight[] = [
@@ -295,7 +295,7 @@ export const MOCK_VERIFIED_INSIGHTS: VerifiedInsight[] = [
     status: "VERIFIED",
     verified_by: "Marcus Vance (VP Engineering)",
     verified_at: "2026-09-09T08:45:00Z",
-    review_notes: "Verified against Member 1 ingestion pipeline benchmark reports.",
+    review_notes: "Verified against ingestion pipeline benchmark reports.",
     created_at: "2026-09-07T14:10:00Z",
   },
 ];

@@ -11,7 +11,7 @@ export function PipelineStepper({ steps }: PipelineStepperProps) {
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs">
       <div className="border-b border-slate-100 pb-3 mb-4 flex items-center justify-between">
         <div>
-          <h3 className="text-sm font-bold text-slate-900">Member 1 Ingestion Pipeline Tracker</h3>
+          <h3 className="text-sm font-bold text-slate-900">Ingestion Pipeline Tracker</h3>
           <p className="text-[11px] text-slate-500">
             Real-time execution status across staging, validation, cleaning, and scoring
           </p>

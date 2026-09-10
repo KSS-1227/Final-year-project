@@ -32,7 +32,7 @@ export default function QualityPage() {
         <div>
           <div className="flex items-center space-x-2">
             <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold text-blue-800 uppercase">
-              Member 1 Output Visualization
+              Output Visualization
             </span>
             <span className="text-xs text-slate-400">• Service Layer Contract</span>
           </div>

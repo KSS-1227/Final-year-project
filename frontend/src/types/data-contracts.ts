@@ -1,8 +1,8 @@
 // Project Data Contracts for Enterprise Data Intelligence Platform
-// Strictly matching Member 1, Member 2, and Member 3 backend schema definitions.
+// Strictly matching backend schema definitions.
 
 // ==========================================
-// MEMBER 1: Data Ingestion & Quality Layer
+// Data Ingestion & Quality Layer
 // ==========================================
 
 export interface Batch {
@@ -48,7 +48,7 @@ export interface PipelineLog {
 }
 
 // ==========================================
-// MEMBER 2: Analytics, Forecasting & Detection Layer
+// Analytics, Forecasting & Detection Layer
 // ==========================================
 
 export interface MetricItem {
@@ -95,7 +95,7 @@ export interface AnomalyItem {
 }
 
 // ==========================================
-// MEMBER 3: Verification, Scenario & Dashboard Layer
+// Verification, Scenario & Dashboard Layer
 // ==========================================
 
 export interface VerifiedInsight {

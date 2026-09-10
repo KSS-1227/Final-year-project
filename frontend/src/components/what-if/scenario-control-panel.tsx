@@ -51,7 +51,7 @@ export function ScenarioControlPanel({
           <div className="flex items-center space-x-2">
             {isSimulating && (
               <span className="text-[10px] text-indigo-600 font-semibold animate-pulse">
-                Simulating...
+                Updating...
               </span>
             )}
             <span

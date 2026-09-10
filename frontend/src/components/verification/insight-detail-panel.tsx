@@ -151,7 +151,7 @@ export function InsightDetailPanel({
           ) : (
             <div className="flex items-center justify-between w-full text-xs">
               <span className="text-slate-500 font-medium">
-                Verified by <strong className="text-slate-800">{insight.verifiedBy || "Member 3"}</strong> on {insight.verifiedAt}
+                Verified by <strong className="text-slate-800">{insight.verifiedBy || "System"}</strong> on {insight.verifiedAt}
               </span>
               <button
                 onClick={() => onEdit(insight)}

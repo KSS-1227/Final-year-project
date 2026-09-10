@@ -20,7 +20,7 @@ export function AnomalySummaryCards() {
             {summary.total}
           </span>
         </div>
-        <p className="mt-1 text-[11px] text-slate-500">Flagged by Member 2 engine</p>
+        <p className="mt-1 text-[11px] text-slate-500">Flagged automatically</p>
       </div>
 
       {/* Card 2: High / Critical Severity */}

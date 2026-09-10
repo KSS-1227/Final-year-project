@@ -14,7 +14,7 @@ export function ModelInfoPanel() {
               <Cpu className="h-4 w-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-slate-900">Member 2 Model Registry</h3>
+              <h3 className="text-sm font-bold text-slate-900">Model Registry</h3>
               <p className="text-[11px] text-slate-500">Read-only ML model configuration metadata</p>
             </div>
           </div>
@@ -70,7 +70,7 @@ export function ModelInfoPanel() {
       <div className="pt-3 border-t border-slate-100 text-[10px] text-slate-400 flex items-center justify-between">
         <span className="flex items-center gap-1">
           <Shield className="h-3 w-3 text-emerald-600" />
-          Model trained & managed by Member 2
+          Model trained & managed by the platform
         </span>
         <span className="font-mono">PostgreSQL `model_runs`</span>
       </div>

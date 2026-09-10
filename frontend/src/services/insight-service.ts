@@ -1,4 +1,4 @@
-// Frontend API Service Abstraction for Member 3 Insight Verification
+// Frontend API Service Abstraction for Insight Verification
 // Conceptually maps to PostgreSQL `verified_insights` table and backend REST APIs.
 
 export interface VerificationEvidence {
@@ -50,7 +50,7 @@ let IN_MEMORY_INSIGHTS: DetailedInsight[] = [
     comments: [
       {
         id: "c1",
-        author: "System (Member 2 Engine)",
+        author: "System",
         timestamp: "Sep 09, 10:15",
         text: "Automated insight generated from anomaly detection run #ANOM-2026-901.",
       },
@@ -128,7 +128,7 @@ let IN_MEMORY_INSIGHTS: DetailedInsight[] = [
 ];
 
 /**
- * Frontend Service Abstraction Layer for Member 3 APIs
+ * Frontend Service Abstraction Layer for Insight APIs
  */
 export const InsightService = {
   // GET /api/insights/pending

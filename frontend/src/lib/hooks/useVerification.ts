@@ -31,25 +31,25 @@ export function useVerification() {
   }, []);
 
   const approveInsight = async (id: string, note?: string) => {
-    const updated = await VerificationApi.approveInsight(id, "Member 3 Lead", note);
+    const updated = await VerificationApi.approveInsight(id, "System", note);
     setSelectedInsight(updated);
     await fetchAll();
   };
 
   const rejectInsight = async (id: string, note?: string) => {
-    const updated = await VerificationApi.rejectInsight(id, "Member 3 Lead", note);
+    const updated = await VerificationApi.rejectInsight(id, "System", note);
     setSelectedInsight(updated);
     await fetchAll();
   };
 
   const updateFinding = async (id: string, newFinding: string) => {
-    const updated = await VerificationApi.updateInsightFinding(id, newFinding, "Member 3 Lead");
+    const updated = await VerificationApi.updateInsightFinding(id, newFinding, "System");
     setSelectedInsight(updated);
     await fetchAll();
   };
 
   const addComment = async (id: string, text: string) => {
-    const updated = await VerificationApi.addInsightComment(id, "Member 3 Lead", text);
+    const updated = await VerificationApi.addInsightComment(id, "System", text);
     setSelectedInsight(updated);
     await fetchAll();
   };

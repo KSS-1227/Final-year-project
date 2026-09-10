@@ -54,7 +54,7 @@ export function InsightCard() {
 
       {/* Footer Note */}
       <div className="pt-3 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
-        <span>Verified by Member 3 engine</span>
+        <span>Verified automatically</span>
         <span className="font-semibold text-blue-600 cursor-pointer hover:underline">
           Explore Insights &rarr;
         </span>

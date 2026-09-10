@@ -33,7 +33,7 @@ export default function ForecastPage() {
         <div>
           <div className="flex items-center space-x-2">
             <span className="rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold text-blue-800 uppercase">
-              Member 2 Forecast Engine
+              Forecast Engine
             </span>
             <span className="text-xs text-slate-400">• Consumes Service API Layer</span>
           </div>

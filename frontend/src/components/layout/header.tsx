@@ -149,11 +149,11 @@ export function Header({ onToggleMobileMenu }: HeaderProps) {
         {/* User Profile */}
         <div className="flex items-center space-x-2 pl-1">
           <div className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-900 text-white font-semibold text-xs shadow-xs">
-            M3
+            DI
           </div>
           <div className="hidden sm:flex flex-col">
             <span className="text-xs font-semibold text-slate-900 leading-tight">
-              Member 3 Lead
+              Analyst
             </span>
             <span className="text-[10px] text-slate-500">Decision Intelligence</span>
           </div>

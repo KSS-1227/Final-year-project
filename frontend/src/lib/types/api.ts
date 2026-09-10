@@ -2,7 +2,7 @@
 // Architecture: Next.js -> REST API (Python Backend) -> PostgreSQL
 
 // ==========================================
-// MEMBER 1: Ingestion & Quality Layer Types
+// Ingestion & Quality Layer Types
 // ==========================================
 
 export interface Batch {
@@ -57,7 +57,7 @@ export interface RejectRecord {
 }
 
 // ==========================================
-// MEMBER 2: Analytics, Forecast & Anomaly Types
+// Analytics, Forecast & Anomaly Types
 // ==========================================
 
 export interface Metric {
@@ -116,7 +116,7 @@ export interface Anomaly {
 }
 
 // ==========================================
-// MEMBER 3: Verification & Scenario Types
+// Verification & Scenario Types
 // ==========================================
 
 export interface InsightComment {

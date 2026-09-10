@@ -16,7 +16,7 @@ export function BatchTable() {
             </div>
             <div>
               <h3 className="text-sm font-bold text-slate-900">Recent Data Batches</h3>
-              <p className="text-[11px] text-slate-500">Member 1 ingestion pipeline execution logs</p>
+              <p className="text-[11px] text-slate-500">Ingestion pipeline execution logs</p>
             </div>
           </div>
           <Link

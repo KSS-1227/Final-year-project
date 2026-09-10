@@ -64,7 +64,7 @@ let IN_MEMORY_SCENARIOS_HISTORY: ScenarioHistoryRecord[] = [
 export const ScenarioService = {
   // POST /api/scenarios/simulate
   async simulateScenario(req: SimulationRequest): Promise<SimulationResponse> {
-    // Simulating backend Stage 13 decision simulation engine endpoint response
+    // Simulated backend decision engine endpoint response
     const baseline = 10000;
     const inventory = 9000;
     const change = req.demand_change;

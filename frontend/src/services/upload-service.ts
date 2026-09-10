@@ -1,5 +1,5 @@
 // Frontend API Service Abstraction for File Ingestion Upload
-// Maps to backend endpoint POST /api/upload and Member 1 pipeline status polling.
+// Maps to backend endpoint POST /api/upload and pipeline status polling.
 
 export interface UploadPipelineStep {
   stepNumber: number;
@@ -20,7 +20,7 @@ export interface UploadBatchResult {
 }
 
 export const INITIAL_PIPELINE_STEPS: UploadPipelineStep[] = [
-  { stepNumber: 1, name: "Uploading", description: "Sending payload to Member 1 backend REST API", status: "WAITING" },
+  { stepNumber: 1, name: "Uploading", description: "Sending payload to backend REST API", status: "WAITING" },
   { stepNumber: 2, name: "Processing", description: "Parsing raw binary data into `raw_normalized` staging table", status: "WAITING" },
   { stepNumber: 3, name: "Schema Analysis", description: "Matching table headers against `metadata_catalog` schema", status: "WAITING" },
   { stepNumber: 4, name: "Validation", description: "Running null, format & range checks; routing to `rejects`", status: "WAITING" },

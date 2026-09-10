@@ -190,10 +190,10 @@ export function Sidebar({
           <div className="rounded-md bg-slate-900/90 p-2.5 border border-slate-800">
             <div className="flex items-center space-x-2.5">
               <div className="flex h-7 w-7 items-center justify-center rounded bg-blue-600/20 border border-blue-500/30 text-blue-400 font-bold text-xs">
-                M3
+                DP
               </div>
               <div className="flex flex-col truncate">
-                <span className="text-xs font-semibold text-white truncate">Member 3 Engine</span>
+                <span className="text-xs font-semibold text-white truncate">Decision Platform</span>
                 <span className="text-[10px] text-slate-400 truncate">Decision Platform v2.4</span>
               </div>
             </div>
@@ -202,9 +202,9 @@ export function Sidebar({
           <div className="flex justify-center">
             <div
               className="flex h-7 w-7 items-center justify-center rounded bg-blue-600/20 border border-blue-500/30 text-blue-400 font-bold text-xs"
-              title="Member 3 - Decision Platform"
+              title="Decision Platform"
             >
-              M3
+              DP
             </div>
           </div>
         )}
