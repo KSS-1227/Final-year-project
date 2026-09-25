@@ -13,7 +13,7 @@ import { LoadingState } from "@/components/ui/loading-state";
 import { ErrorState } from "@/components/ui/error-state";
 
 export default function DashboardPage() {
-  const { kpis, isLoading, error, refresh } = useDashboard();
+  const { kpis, performanceData, recentAnomalies, recentBatches, keyInsights, isLoading, error, refresh } = useDashboard();
   const [lastRefreshed, setLastRefreshed] = useState("Sep 09, 2026 • 17:30 IST");
   const [isRefreshing, setIsRefreshing] = useState(false);
 
@@ -82,23 +82,26 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* 3 & 4. Main Analytics Area & Key Insights Panel */}
+      {/* 3. Power BI-Style Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Main Business Performance Chart (2x size) */}
         <div className="lg:col-span-2">
-          <ChartCard />
+          <ChartCard data={performanceData} />
         </div>
+
+        {/* Key Insights Panel (1x size) */}
         <div className="lg:col-span-1">
-          <InsightCard />
+          <InsightCard insights={keyInsights} />
         </div>
       </div>
 
-      {/* 5. Bottom Section: Anomalies & Data Batches */}
+      {/* 4. Bottom Tables Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <AnomalyTable />
-        <BatchTable />
+        <AnomalyTable anomalies={recentAnomalies} />
+        <BatchTable batches={recentBatches} />
       </div>
 
-      {/* 6. Quick Actions */}
+      {/* 5. Quick Actions */}
       <QuickActionCard />
     </div>
   );

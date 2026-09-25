@@ -1,8 +1,19 @@
 import React from "react";
 import { Table, Download } from "lucide-react";
-import { FORECAST_TABLE_DATA } from "@/lib/mock-data/forecast";
 
-export function ForecastTable() {
+interface ForecastTableRow {
+  date: string;
+  entity: string;
+  actual: string | number;
+  forecast: number;
+  variance: string;
+}
+
+interface ForecastTableProps {
+  data: ForecastTableRow[];
+}
+
+export function ForecastTable({ data }: ForecastTableProps) {
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs">
       <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
@@ -30,7 +41,7 @@ export function ForecastTable() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-slate-800">
-            {FORECAST_TABLE_DATA.map((row, idx) => (
+            {data.map((row, idx) => (
               <tr key={idx} className="hover:bg-slate-50/70 transition-colors">
                 <td className="p-3 font-mono font-bold text-slate-900">{row.date}</td>
                 <td className="p-3 font-medium text-slate-800">{row.entity}</td>

@@ -11,10 +11,14 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { FORECAST_VS_ACTUAL_EVAL } from "@/lib/mock-data/forecast";
+import { ForecastVsActualPoint } from "@/lib/mock-data/forecast";
 import { BarChart3 } from "lucide-react";
 
-export function ForecastVsActualChart() {
+interface ForecastVsActualChartProps {
+  data: ForecastVsActualPoint[];
+}
+
+export function ForecastVsActualChart({ data }: ForecastVsActualChartProps) {
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs flex flex-col h-[380px]">
       <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
@@ -37,7 +41,7 @@ export function ForecastVsActualChart() {
       <div className="flex-1 w-full min-h-0">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            data={FORECAST_VS_ACTUAL_EVAL}
+            data={data}
             margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />

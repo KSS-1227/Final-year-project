@@ -1,9 +1,13 @@
 import React from "react";
 import { Cpu, CheckCircle2, Sliders, Shield } from "lucide-react";
-import { MODEL_METADATA } from "@/lib/mock-data/forecast";
+import { ModelMetadata } from "@/lib/mock-data/forecast";
 
-export function ModelInfoPanel() {
-  const model = MODEL_METADATA;
+interface ModelInfoPanelProps {
+  data: ModelMetadata;
+}
+
+export function ModelInfoPanel({ data }: ModelInfoPanelProps) {
+  const model = data;
 
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs flex flex-col justify-between h-[380px]">

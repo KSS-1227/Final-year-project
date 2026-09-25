@@ -1,9 +1,13 @@
 import React from "react";
 import { Lightbulb, CheckCircle2, AlertOctagon, TrendingUp, ShieldCheck } from "lucide-react";
-import { KEY_INSIGHTS, KeyInsightItem } from "@/lib/mock-data/dashboard";
+import { KeyInsightItem } from "@/lib/mock-data/dashboard";
 import { StatusBadge } from "./status-badge";
 
-export function InsightCard() {
+interface InsightCardProps {
+  insights: KeyInsightItem[];
+}
+
+export function InsightCard({ insights }: InsightCardProps) {
   const getInsightIcon = (category: KeyInsightItem["category"]) => {
     switch (category) {
       case "revenue":
@@ -40,7 +44,7 @@ export function InsightCard() {
 
         {/* Insight Items List */}
         <div className="space-y-3">
-          {KEY_INSIGHTS.map((insight) => (
+          {insights.map((insight) => (
             <div
               key={insight.id}
               className="rounded-md border border-slate-100 bg-slate-50/60 p-3 hover:bg-slate-50 hover:border-slate-200 transition-colors flex items-start space-x-3 text-xs"

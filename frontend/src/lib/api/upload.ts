@@ -1,15 +1,11 @@
-import { isMockMode, apiFetch } from "./client";
-import { UploadService, UploadBatchResult, UploadPipelineStep } from "@/services/upload-service";
+import { apiFetch } from "./client";
+import { UploadBatchResult, UploadPipelineStep } from "@/services/upload-service";
 
 export const UploadApi = {
   async uploadFile(
     file: File,
     onStepUpdate?: (steps: UploadPipelineStep[]) => void
   ): Promise<UploadBatchResult> {
-    if (isMockMode()) {
-      return UploadService.uploadFileAndTriggerPipeline(file, onStepUpdate || (() => {}));
-    }
-
     const formData = new FormData();
     formData.append("file", file);
 

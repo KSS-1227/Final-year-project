@@ -1,11 +1,13 @@
 import React from "react";
 import { CheckCircle2, ShieldCheck, Database, Check, AlertTriangle } from "lucide-react";
-import { QUALITY_SUMMARY_DATA } from "@/lib/mock-data/quality";
+import { QualityMetricSummary } from "@/lib/mock-data/quality";
 import { StatusBadge } from "@/components/dashboard/status-badge";
 
-export function QualitySummaryCards() {
-  const data = QUALITY_SUMMARY_DATA;
+interface QualitySummaryCardsProps {
+  data: QualityMetricSummary;
+}
 
+export function QualitySummaryCards({ data }: QualitySummaryCardsProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
       {/* Card 1: Current Quality Score */}

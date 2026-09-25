@@ -8,7 +8,6 @@ import {
   Database,
   Menu,
 } from "lucide-react";
-import { MOCK_NOTIFICATIONS } from "@/lib/mock-data";
 import { NotificationItem } from "@/types/data-contracts";
 
 interface HeaderProps {
@@ -17,7 +16,7 @@ interface HeaderProps {
 
 export function Header({ onToggleMobileMenu }: HeaderProps) {
   const [notificationsOpen, setNotificationsOpen] = useState(false);
-  const [notifications, setNotifications] = useState<NotificationItem[]>(MOCK_NOTIFICATIONS);
+  const [notifications, setNotifications] = useState<NotificationItem[]>([]);
   const unreadCount = notifications.filter((n) => !n.read).length;
   const searchInputRef = useRef<HTMLInputElement>(null);
 

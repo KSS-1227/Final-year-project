@@ -15,7 +15,7 @@ type QualityTab = "overview" | "batches" | "rejects" | "schema";
 
 export default function QualityPage() {
   const [activeTab, setActiveTab] = useState<QualityTab>("overview");
-  const { isLoading, error, refresh } = useQuality();
+  const { summary, components, trend, batches, rejects, metadata, isLoading, error, refresh } = useQuality();
 
   if (isLoading) {
     return <LoadingState title="Loading Quality Catalog Metrics" rows={4} />;
@@ -44,7 +44,7 @@ export default function QualityPage() {
       </div>
 
       {/* 2. Quality Summary Row */}
-      <QualitySummaryCards />
+      {summary && <QualitySummaryCards data={summary} />}
 
       {/* Navigation Tabs */}
       <div className="flex border-b border-slate-200 space-x-6">
@@ -94,17 +94,17 @@ export default function QualityPage() {
       {activeTab === "overview" && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-1">
-            <QualityGauge />
+            {summary && components.length > 0 && <QualityGauge summary={summary} components={components} />}
           </div>
           <div className="lg:col-span-2">
-            <QualityTrendChart />
+            {trend.length > 0 && <QualityTrendChart data={trend} />}
           </div>
         </div>
       )}
 
-      {activeTab === "batches" && <BatchHistoryTable />}
-      {activeTab === "rejects" && <RejectsTable />}
-      {activeTab === "schema" && <SchemaMetadataTable />}
+      {activeTab === "batches" && batches.length > 0 && <BatchHistoryTable data={batches} />}
+      {activeTab === "rejects" && rejects.length > 0 && <RejectsTable data={rejects} />}
+      {activeTab === "schema" && metadata.length > 0 && <SchemaMetadataTable data={metadata} />}
     </div>
   );
 }

@@ -12,8 +12,12 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { PERFORMANCE_CHART_DATA } from "@/lib/mock-data/dashboard";
-import { LineChart, Filter } from "lucide-react";
+import { PerformanceDataPoint } from "@/lib/mock-data/dashboard";
+import { LineChart } from "lucide-react";
+
+interface ChartCardProps {
+  data: PerformanceDataPoint[];
+}
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
@@ -34,7 +38,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-export function ChartCard() {
+export function ChartCard({ data }: ChartCardProps) {
   const [timeframe, setTimeframe] = useState<"3M" | "6M" | "ALL">("6M");
 
   return (
@@ -86,7 +90,7 @@ export function ChartCard() {
       <div className="flex-1 w-full min-h-0">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart
-            data={PERFORMANCE_CHART_DATA}
+            data={data}
             margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
           >
             <defs>

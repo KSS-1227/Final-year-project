@@ -16,7 +16,7 @@ export default function ForecastPage() {
   const [region, setRegion] = useState("all");
   const [sku, setSku] = useState("all");
 
-  const { isLoading, error, refresh } = useForecast(dateRange, region, sku);
+  const { summary, timeseries, vsActual, tableData, modelInfo, isLoading, error, refresh } = useForecast(dateRange, region, sku);
 
   if (isLoading) {
     return <LoadingState title="Loading Predictive Forecast Models" rows={4} />;
@@ -47,7 +47,7 @@ export default function ForecastPage() {
       </div>
 
       {/* 2. Forecast Summary Cards */}
-      <ForecastSummaryCards />
+      {summary && <ForecastSummaryCards data={summary} />}
 
       {/* 4. Filters Bar */}
       <ForecastFilters
@@ -60,20 +60,20 @@ export default function ForecastPage() {
       />
 
       {/* 3. Main Forecast Chart */}
-      <ForecastMainChart />
+      {timeseries.length > 0 && <ForecastMainChart data={timeseries} />}
 
       {/* 6 & 7. Forecast vs Actual & Model Info Panel */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
-          <ForecastVsActualChart />
+          {vsActual.length > 0 && <ForecastVsActualChart data={vsActual} />}
         </div>
         <div className="lg:col-span-1">
-          <ModelInfoPanel />
+          {modelInfo && <ModelInfoPanel data={modelInfo} />}
         </div>
       </div>
 
       {/* 5. Forecast Table */}
-      <ForecastTable />
+      {tableData.length > 0 && <ForecastTable data={tableData} />}
     </div>
   );
 }

@@ -1,8 +1,12 @@
 import React from "react";
 import { Database, Tag } from "lucide-react";
-import { METADATA_CATALOG_SCHEMA } from "@/lib/mock-data/quality";
+import { MetadataColumnSchema } from "@/lib/mock-data/quality";
 
-export function SchemaMetadataTable() {
+interface SchemaMetadataTableProps {
+  data: MetadataColumnSchema[];
+}
+
+export function SchemaMetadataTable({ data }: SchemaMetadataTableProps) {
   const getSemanticTagBadge = (tag: string) => {
     switch (tag) {
       case "identifier":
@@ -52,7 +56,7 @@ export function SchemaMetadataTable() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-slate-800">
-            {METADATA_CATALOG_SCHEMA.map((col) => (
+            {data.map((col) => (
               <tr key={col.columnName} className="hover:bg-slate-50/70 transition-colors">
                 <td className="p-3 font-mono font-bold text-slate-900">{col.columnName}</td>
                 <td className="p-3 font-mono text-blue-700">{col.dataType}</td>

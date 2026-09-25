@@ -18,7 +18,7 @@ export default function AnomaliesPage() {
   const [statusFilter, setStatusFilter] = useState("all");
   const [selectedAnomaly, setSelectedAnomaly] = useState<AnomalyRecord | null>(null);
 
-  const { anomalies, isLoading, error, refresh } = useAnomalies(
+  const { summary, trend, anomalies, isLoading, error, refresh } = useAnomalies(
     searchQuery,
     severityFilter,
     regionFilter,
@@ -54,10 +54,10 @@ export default function AnomaliesPage() {
       </div>
 
       {/* 2. Summary Cards */}
-      <AnomalySummaryCards />
+      {summary && <AnomalySummaryCards summary={summary} />}
 
       {/* 3. Trend Chart */}
-      <AnomalyTrendChart />
+      {trend.length > 0 && <AnomalyTrendChart data={trend} />}
 
       {/* 6. Filters & Search */}
       <AnomalyFilters

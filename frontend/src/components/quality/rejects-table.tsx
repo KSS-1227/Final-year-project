@@ -1,9 +1,13 @@
 import React from "react";
 import { AlertTriangle } from "lucide-react";
-import { REJECTS_SUMMARY } from "@/lib/mock-data/quality";
+import { RejectedRecordSummary } from "@/lib/mock-data/quality";
 import { StatusBadge } from "@/components/dashboard/status-badge";
 
-export function RejectsTable() {
+interface RejectsTableProps {
+  data: RejectedRecordSummary[];
+}
+
+export function RejectsTable({ data }: RejectsTableProps) {
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs">
       <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
@@ -19,7 +23,7 @@ export function RejectsTable() {
           </div>
         </div>
         <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-[10px] font-bold text-amber-800">
-          12,917 Total Rejects
+          {data.reduce((sum, r) => sum + r.count, 0).toLocaleString()} Total Rejects
         </span>
       </div>
 
@@ -35,7 +39,7 @@ export function RejectsTable() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-slate-800">
-            {REJECTS_SUMMARY.map((rej) => (
+            {data.map((rej) => (
               <tr key={rej.id} className="hover:bg-slate-50/70 transition-colors">
                 <td className="p-3 font-semibold text-slate-900">{rej.reason}</td>
                 <td className="p-3 font-mono font-bold text-slate-900">{rej.count.toLocaleString()}</td>

@@ -11,8 +11,12 @@ import {
   Tooltip,
   ReferenceLine,
 } from "recharts";
-import { QUALITY_TREND_DATA } from "@/lib/mock-data/quality";
+import { QualityTrendPoint } from "@/lib/mock-data/quality";
 import { TrendingUp } from "lucide-react";
+
+interface QualityTrendChartProps {
+  data: QualityTrendPoint[];
+}
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
@@ -36,7 +40,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-export function QualityTrendChart() {
+export function QualityTrendChart({ data }: QualityTrendChartProps) {
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs flex flex-col h-full">
       <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
@@ -58,7 +62,7 @@ export function QualityTrendChart() {
 
       <div className="flex-1 w-full min-h-[260px]">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={QUALITY_TREND_DATA} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+          <LineChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
             <XAxis
               dataKey="date"

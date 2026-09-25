@@ -1,10 +1,12 @@
 import React from "react";
 import { Calendar, Target, ShoppingBag, TrendingUp } from "lucide-react";
-import { FORECAST_SUMMARY } from "@/lib/mock-data/forecast";
+import { ForecastSummaryMetrics } from "@/lib/mock-data/forecast";
 
-export function ForecastSummaryCards() {
-  const data = FORECAST_SUMMARY;
+interface ForecastSummaryCardsProps {
+  data: ForecastSummaryMetrics;
+}
 
+export function ForecastSummaryCards({ data }: ForecastSummaryCardsProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Card 1: Forecast Horizon */}

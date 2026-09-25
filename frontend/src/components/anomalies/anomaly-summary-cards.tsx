@@ -1,10 +1,18 @@
 import React from "react";
 import { AlertOctagon, ShieldAlert, AlertTriangle, CheckCircle2 } from "lucide-react";
-import { ANOMALIES_SUMMARY } from "@/lib/mock-data/anomalies";
 
-export function AnomalySummaryCards() {
-  const summary = ANOMALIES_SUMMARY;
+interface AnomalySummary {
+  total: number;
+  highSeverity: number;
+  mediumSeverity: number;
+  resolved: number;
+}
 
+interface AnomalySummaryCardsProps {
+  summary: AnomalySummary;
+}
+
+export function AnomalySummaryCards({ summary }: AnomalySummaryCardsProps) {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {/* Card 1: Total Anomalies */}

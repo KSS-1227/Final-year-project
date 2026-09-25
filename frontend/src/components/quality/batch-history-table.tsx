@@ -1,9 +1,13 @@
 import React from "react";
 import { FileSpreadsheet, Eye, Download } from "lucide-react";
-import { QUALITY_BATCH_HISTORY } from "@/lib/mock-data/quality";
+import { QualityBatchRecord } from "@/lib/mock-data/quality";
 import { StatusBadge } from "@/components/dashboard/status-badge";
 
-export function BatchHistoryTable() {
+interface BatchHistoryTableProps {
+  data: QualityBatchRecord[];
+}
+
+export function BatchHistoryTable({ data }: BatchHistoryTableProps) {
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs">
       <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
@@ -14,7 +18,7 @@ export function BatchHistoryTable() {
           </p>
         </div>
         <span className="text-xs text-slate-400 font-mono">
-          Total Batches: {QUALITY_BATCH_HISTORY.length}
+          Total Batches: {data.length}
         </span>
       </div>
 
@@ -32,7 +36,7 @@ export function BatchHistoryTable() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100 text-slate-800">
-            {QUALITY_BATCH_HISTORY.map((batch) => (
+            {data.map((batch) => (
               <tr key={batch.batchId} className="hover:bg-slate-50/70 transition-colors">
                 <td className="p-3 font-mono font-bold text-slate-900">{batch.batchId}</td>
                 <td className="p-3 font-medium flex items-center space-x-2">

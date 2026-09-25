@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { DashboardApi } from "@/lib/api/dashboard";
-import { KPIItem } from "@/lib/mock-data/dashboard";
+import { KPIItem, PerformanceDataPoint, DashboardAnomaly, DashboardBatch, KeyInsightItem } from "@/lib/mock-data/dashboard";
 
 export function useDashboard() {
   const [kpis, setKpis] = useState<KPIItem[]>([]);
-  const [performanceData, setPerformanceData] = useState<any[]>([]);
-  const [recentAnomalies, setRecentAnomalies] = useState<any[]>([]);
-  const [recentBatches, setRecentBatches] = useState<any[]>([]);
+  const [performanceData, setPerformanceData] = useState<PerformanceDataPoint[]>([]);
+  const [recentAnomalies, setRecentAnomalies] = useState<DashboardAnomaly[]>([]);
+  const [recentBatches, setRecentBatches] = useState<DashboardBatch[]>([]);
+  const [keyInsights, setKeyInsights] = useState<KeyInsightItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -16,16 +17,18 @@ export function useDashboard() {
     setIsLoading(true);
     setError(null);
     try {
-      const [kRes, pRes, aRes, bRes] = await Promise.all([
+      const [kRes, pRes, aRes, bRes, iRes] = await Promise.all([
         DashboardApi.getKPIs(),
         DashboardApi.getPerformanceData(),
         DashboardApi.getRecentAnomalies(),
         DashboardApi.getRecentBatches(),
+        DashboardApi.getKeyInsights(),
       ]);
       setKpis(kRes);
       setPerformanceData(pRes);
       setRecentAnomalies(aRes);
       setRecentBatches(bRes);
+      setKeyInsights(iRes);
     } catch (err: any) {
       setError(err.message || "Failed to load dashboard data");
     } finally {
@@ -37,5 +40,5 @@ export function useDashboard() {
     fetchAll();
   }, []);
 
-  return { kpis, performanceData, recentAnomalies, recentBatches, isLoading, error, refresh: fetchAll };
+  return { kpis, performanceData, recentAnomalies, recentBatches, keyInsights, isLoading, error, refresh: fetchAll };
 }

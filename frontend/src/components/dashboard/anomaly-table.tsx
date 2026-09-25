@@ -1,10 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { AlertOctagon, ArrowUpRight } from "lucide-react";
-import { RECENT_ANOMALIES_5 } from "@/lib/mock-data/dashboard";
+import { DashboardAnomaly } from "@/lib/mock-data/dashboard";
 import { StatusBadge } from "./status-badge";
 
-export function AnomalyTable() {
+interface AnomalyTableProps {
+  anomalies: DashboardAnomaly[];
+}
+
+export function AnomalyTable({ anomalies }: AnomalyTableProps) {
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs flex flex-col justify-between">
       <div>
@@ -40,7 +44,7 @@ export function AnomalyTable() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {RECENT_ANOMALIES_5.map((anom) => (
+              {anomalies.map((anom) => (
                 <tr key={anom.id} className="hover:bg-slate-50/70 transition-colors">
                   <td className="p-2.5 font-semibold text-slate-900 truncate max-w-[160px]">
                     {anom.metric}

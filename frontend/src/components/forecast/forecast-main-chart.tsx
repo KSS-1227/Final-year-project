@@ -12,8 +12,12 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { MAIN_FORECAST_TIMESERIES } from "@/lib/mock-data/forecast";
+import { ForecastDataPoint } from "@/lib/mock-data/forecast";
 import { TrendingUp } from "lucide-react";
+
+interface ForecastMainChartProps {
+  data: ForecastDataPoint[];
+}
 
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
@@ -46,7 +50,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return null;
 };
 
-export function ForecastMainChart() {
+export function ForecastMainChart({ data }: ForecastMainChartProps) {
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs flex flex-col h-[420px]">
       <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
@@ -69,7 +73,7 @@ export function ForecastMainChart() {
       <div className="flex-1 w-full min-h-0">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart
-            data={MAIN_FORECAST_TIMESERIES}
+            data={data}
             margin={{ top: 10, right: 10, left: -10, bottom: 0 }}
           >
             <defs>

@@ -1,12 +1,14 @@
 import React from "react";
-import { QUALITY_SUMMARY_DATA, QUALITY_COMPONENTS_DATA } from "@/lib/mock-data/quality";
+import { QualityMetricSummary, QualityComponentScore } from "@/lib/mock-data/quality";
 import { StatusBadge } from "@/components/dashboard/status-badge";
 import { CheckCircle2 } from "lucide-react";
 
-export function QualityGauge() {
-  const summary = QUALITY_SUMMARY_DATA;
-  const components = QUALITY_COMPONENTS_DATA;
+interface QualityGaugeProps {
+  summary: QualityMetricSummary;
+  components: QualityComponentScore[];
+}
 
+export function QualityGauge({ summary, components }: QualityGaugeProps) {
   // SVG Gauge calculations
   const radius = 60;
   const strokeWidth = 10;

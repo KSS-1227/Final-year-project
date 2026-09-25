@@ -1,10 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { Database, ArrowUpRight } from "lucide-react";
-import { RECENT_BATCHES_5 } from "@/lib/mock-data/dashboard";
+import { DashboardBatch } from "@/lib/mock-data/dashboard";
 import { StatusBadge } from "./status-badge";
 
-export function BatchTable() {
+interface BatchTableProps {
+  batches: DashboardBatch[];
+}
+
+export function BatchTable({ batches }: BatchTableProps) {
   return (
     <div className="rounded-md border border-slate-200 bg-white p-5 shadow-xs flex flex-col justify-between">
       <div>
@@ -40,7 +44,7 @@ export function BatchTable() {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {RECENT_BATCHES_5.map((batch) => (
+              {batches.map((batch) => (
                 <tr key={batch.batchId} className="hover:bg-slate-50/70 transition-colors">
                   <td className="p-2.5 font-mono font-bold text-slate-900">{batch.batchId}</td>
                   <td className="p-2.5 text-slate-500 text-[11px]">{batch.uploadDate}</td>
